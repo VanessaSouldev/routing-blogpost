@@ -1,12 +1,14 @@
 import React from 'react';
 import { Route, Redirect } from "react-router-dom";
 
-function PrivateRoute({ children,isAuth, ...rest }) {
+function PrivateRoute({ children,isAuth, ...rest})
+{
     return (
-        <Route {...rest} >
-            {isAuth === true ? children : <Redirect to='/login'/>}
-            </Route>
-    );
+        <Route {...rest}>
+            {isAuth ? children : <Redirect to='/login'/>}
+        </Route>
+    )
 }
+
 
 export default PrivateRoute;

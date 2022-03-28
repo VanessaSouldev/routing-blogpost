@@ -2,19 +2,20 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 
-const Login = ({isAuth,toggleAuth}) => {
+const Login = ({toggleAuth}) => {
     const history = useHistory()
 
-    function nextPage() {
-        history.push('/blog')
+    function signIn() {
         toggleAuth(true)
-        console.log(isAuth)
+        history.push('/')
+
 
     }
     return (
-        <div>
-            <button type="button" onClick={nextPage}>inloggen</button>
-        </div>
+        <section>
+            <h1>Druk op de knop om in te loggen!</h1>
+            <button type="button" onClick={signIn}>Inloggen</button>
+        </section>
     );
 };
 

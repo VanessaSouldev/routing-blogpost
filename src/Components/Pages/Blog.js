@@ -9,7 +9,7 @@ const Blog = () => {
             <h3>Aantal blogposts: {posts.length}</h3>
             <ol>
                 {posts.map((post) => {
-                return <li><Link to={`blog/${post.id}`}>{post.title}</Link></li>
+                return <li key={post.id}><Link to={`blog/${post.id}`}>{post.title}</Link></li>
                 })}
             </ol>
         </section>
